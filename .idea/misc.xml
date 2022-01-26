@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Haider Zaman/AndroidStudioProjects/MAD_ASSIGNMENT_3/app/src/main/res/drawable/ic_login_bk.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/Haider Zaman/AndroidStudioProjects/MAD_ASSIGNMENT_3/app/src/main/res/drawable/login_shape_bk.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/Haider Zaman/AndroidStudioProjects/MAD_ASSIGNMENT_3/app/src/main/res/drawable/styles.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/Haider Zaman/AndroidStudioProjects/MAD_ASSIGNMENT_3/app/src/main/res/layout/activity_companyDetail.xml" value="0.11730072463768115" />
         <entry key="..\:/Users/Haider Zaman/AndroidStudioProjects/MAD_ASSIGNMENT_3/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Haider Zaman/AndroidStudioProjects/MAD_ASSIGNMENT_3/app/src/main/res/layout/activity_login2.xml" value="0.20416666666666666" />

@@ -9,20 +9,21 @@
     android:background="@color/black"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
-    <TextView
+    <Button
         android:id="@+id/sigintext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="86dp"
+        android:layout_height="43dp"
         android:layout_marginTop="8dp"
         android:text="@string/signin"
         android:textColor="@color/purple_200"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.773" />
+
     <TextView
         android:id="@+id/CCompany"
         android:layout_width="wrap_content"

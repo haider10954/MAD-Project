@@ -4,10 +4,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 import java.util.List;
 
+import com.example.mad_assignment_3.model.Company;
+
 public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHolder> {
-    final private List<Company> companyList;
+    private ArrayList<Company> companyList;
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, year, location;
         public MyViewHolder(View view) {
@@ -17,7 +21,7 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHo
             year = view.findViewById(R.id.yearText);
         }
     }
-    public CompanyAdapter(List<Company> companyList) {
+    public CompanyAdapter(ArrayList<Company> companyList) {
         this.companyList = companyList;
     }
     @Override
@@ -29,9 +33,9 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Company movie = companyList.get(position);
-        holder.name.setText(movie.getName());
-        holder.location.setText(movie.getLocation());
-        holder.year.setText(movie.getYear());
+        holder.name.setText(movie.id);
+        holder.location.setText(movie.name);
+        holder.year.setText(movie.description);
     }
     @Override
     public int getItemCount() {

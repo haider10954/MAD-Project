@@ -4,11 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.mad_assignment_3.API.BackendImpl;
+import com.example.mad_assignment_3.model.LoginResponse;
+import com.example.mad_assignment_3.model.RegisterResponse;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RegistrationActivity extends AppCompatActivity {
     EditText e_name, e_email, e_password, e_re_password;
+    Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,24 +31,19 @@ public class RegistrationActivity extends AppCompatActivity {
         e_email = findViewById(R.id.email);
         e_password = findViewById(R.id.password);
         e_re_password = findViewById(R.id.repassword);
+        b1=findViewById(R.id.sigintext);
+        b1.setOnClickListener(v->{
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+
+        });
         Button register = findViewById(R.id.regButton);
 
         register.setOnClickListener(v -> {
-            String name = e_name.getText().toString();
-            String email = e_email.getText().toString();
             String password = e_password.getText().toString();
-            String re_password = e_re_password.getText().toString();
-            Bundle bnd = new Bundle();
-            bnd.putString("Username",name);
-            bnd.putString("Email",email);
-            bnd.putString("Password",password);
-            bnd.putString("RePassword",re_password);
-
-            if( validationName() && validationEmail() && validationPassword())
+            if(validationName() && validationEmail() && validationPassword() && validationRe_password(password))
             {
-                Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
-                i.putExtras(bnd);
-                startActivity(i);
+                register();
             }
         });
 
@@ -45,7 +54,7 @@ public class RegistrationActivity extends AppCompatActivity {
         String val = e_name.getText().toString();
         if (val.isEmpty())
         {
-            e_name.setError("Field cannont be emply");
+            e_name.setError("Field cannot be empty");
             return false;
         }
         else {
@@ -78,15 +87,15 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean validationPassword()
     {
         String val = e_password.getText().toString();
-//        String  pattern = "[a-zA-Z0-9._]" + "(?=.*[@#$%^&+=])" + "(?=\\s+$)" + ".{4, }" + "$";
+        String  pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
         if (val.isEmpty())
         {
-            e_password.setError("Field cannont be emply");
+            e_password.setError("Field cannot be empty");
         }
-//            else if ( !val.matches((pattern)))
-//            {
-//                e_password.setError("Password is too weak");
-//            }
+            else if ( !val.matches((pattern)))
+            {
+                e_password.setError("Password is too weak");
+           }
 
         else {
             e_password.setError(null);
@@ -95,24 +104,49 @@ public class RegistrationActivity extends AppCompatActivity {
         return false;
     }
 
-//    private boolean validationRe_password(String pass)
-//    {
-//        String val = e_re_password.getText().toString();
-//        if (val.isEmpty())
-//        {
-//            e_re_password.setError("Field can not be empty");
-//            return false;
-//        }
-//        else if (pass != val)
-//        {
-//            e_re_password.setError("Password Does not Match");
-//            return false;
-//        }
-//        else
-//            {
-//            e_re_password.setError(null);
-//            return true;
-//        }
-//
-//    }
+    private boolean validationRe_password(String pass)
+    {
+        String val = e_re_password.getText().toString();
+        if (val.isEmpty())
+        {
+            e_re_password.setError("Field can not be empty");
+            return false;
+        }
+        if (!pass.equals(val))
+        {
+            e_re_password.setError("Password Does not Match");
+            return false;
+        }
+        e_re_password.setError(null);
+        return true;
+    }
+
+    private void register() {
+        String password = e_re_password.getText().toString();
+        String username = e_name.getText().toString();
+        String email = e_email.getText().toString();
+
+        new Thread(() -> {
+            Call<RegisterResponse> call = new BackendImpl(getApplicationContext()).register(username, password, email);
+            call.enqueue(new Callback<RegisterResponse>() {
+                @Override
+                public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                    RegisterResponse data = response.body();
+                    if (data.status) {
+                        Intent intent= new Intent(getApplicationContext(), HomeActivity.class);
+                        startActivity(intent);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Could not register",
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            });
+        }).start();
+    }
 }
