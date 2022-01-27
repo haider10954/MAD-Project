@@ -9,6 +9,7 @@
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
     <Button
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/sigintext"
         android:layout_width="107dp"
         android:layout_height="52dp"
@@ -78,6 +79,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397" />
     <Button
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/regButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

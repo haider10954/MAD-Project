@@ -64,6 +64,7 @@
         app:layout_constraintVertical_bias="0.432" />
 
     <Button
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/button_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -102,6 +103,7 @@
         app:layout_constraintVertical_bias="0.696" />
 
     <Button
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/map"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
