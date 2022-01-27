@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:background="?android:attr/selectableItemBackground"
@@ -25,7 +26,11 @@
         android:id="@+id/locationText"
         android:layout_width="378dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title" />
+        android:layout_below="@id/title"
+        android:fontFamily="sans-serif-smallcaps"
+        android:includeFontPadding="true"
+        android:textSize="15sp"
+        app:drawableLeftCompat="@drawable/bullets" />
 
     <TextView
         android:id="@+id/yearText"
@@ -34,5 +39,5 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="9dp"
         android:layout_below="@+id/locationText"
-        />
+        app:drawableLeftCompat="@drawable/bullets" />
 </RelativeLayout>

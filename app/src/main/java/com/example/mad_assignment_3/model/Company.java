@@ -20,5 +20,5 @@ public class Company {
     @SerializedName("description")
     public String description;
     @SerializedName("geolocation")
-    Geolocation location;
+    public Geolocation location;
 }

@@ -49,7 +49,16 @@ public class HomeActivity extends AppCompatActivity {
                         companyList.get(position).phone);
                 intent.putExtra("year",
                         companyList.get(position).description);
+                intent.putExtra("address",
+                        companyList.get(position).address);
+                intent.putExtra("geolocation",
+                        companyList.get(position).location.getLatitude());
+                intent.putExtra("geolocation",
+                        companyList.get(position).location.getLongitude());
+                intent.putExtra("Logo",
+                        companyList.get(position).logo);
                 startActivity(intent);
+
             }
             @Override
             public void onLongClick(View view, int position) {
