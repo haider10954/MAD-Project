@@ -44,9 +44,9 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),
                         CompanyDetails.class);
                 intent.putExtra("name",
-                        companyList.get(position).id);
-                intent.putExtra("location",
                         companyList.get(position).name);
+                intent.putExtra("location",
+                        companyList.get(position).phone);
                 intent.putExtra("year",
                         companyList.get(position).description);
                 startActivity(intent);

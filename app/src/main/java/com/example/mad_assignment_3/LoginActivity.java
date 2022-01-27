@@ -21,17 +21,19 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     EditText edt,edt1;
     TextView txt;
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
-        Button btn = findViewById(R.id.map);
+        btn = findViewById(R.id.BtnSignUp);
         edt = findViewById(R.id.email);
         edt1 = findViewById(R.id.password);
-        /*btn.setOnClickListener(view ->{
-            Intent i = new Intent(this, MapsActivity.class);
+        btn.setOnClickListener(view ->{
+            Intent i = new Intent(this, RegistrationActivity.class);
             startActivity(i);
-        } );*/
+
+        } );
 
         txt = findViewById(R.id.email);
         Button btn1 = findViewById(R.id.button_login);

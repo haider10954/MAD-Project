@@ -133,7 +133,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                     RegisterResponse data = response.body();
                     if (data.status) {
-                        Intent intent= new Intent(getApplicationContext(), HomeActivity.class);
+                        Intent intent= new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                     }
                 }

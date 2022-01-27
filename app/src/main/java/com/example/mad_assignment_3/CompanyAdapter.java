@@ -33,8 +33,8 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Company movie = companyList.get(position);
-        holder.name.setText(movie.id);
-        holder.location.setText(movie.name);
+        holder.name.setText(movie.name);
+        holder.location.setText(movie.phone);
         holder.year.setText(movie.description);
     }
     @Override

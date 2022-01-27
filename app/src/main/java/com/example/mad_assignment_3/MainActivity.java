@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         public  void RegistrationActivity()
         {
-        Intent i = new Intent(this, RegistrationActivity.class);
+        Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
         }
 }

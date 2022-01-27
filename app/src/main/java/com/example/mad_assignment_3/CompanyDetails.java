@@ -7,16 +7,19 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CompanyDetails extends AppCompatActivity {
-    TextView textView;
-    @SuppressLint("SetTextI18n")@Override
+    TextView textView,Name;
+    @SuppressLint("SetTextI18n")
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Name =findViewById(R.id.companyDetails);
         textView = findViewById(R.id.textView);
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("name");
         String location = bundle.getString("location");
         String year = bundle.getString("year");
-        textView.setText("Company Name: " + name + "\n" + "Location: " + location + "\n" + "Since: " + year);
+        Name.setText(name);
+        textView.setText("Company Name: " + name + "\n" + "Location: " + location + "\n" + "Description: " + year);
     }
 }
