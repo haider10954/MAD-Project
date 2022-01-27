@@ -17,6 +17,8 @@
     <string name="todo">TODO</string>
     <string name="welcome">WELCOME</string>
 
+    <string name="google_maps_key"></string>
+
 
     <string name="register">REGISTER</string>
     <string name="login_email_hint">Email</string>
