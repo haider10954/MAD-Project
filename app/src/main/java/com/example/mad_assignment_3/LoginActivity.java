@@ -21,13 +21,14 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     EditText edt,edt1;
     TextView txt;
-    Button btn;
+    Button btn,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
         btn = findViewById(R.id.BtnSignUp);
         edt = findViewById(R.id.email);
+        btn2 = findViewById(R.id.map);
         edt1 = findViewById(R.id.password);
         btn.setOnClickListener(view ->{
             Intent i = new Intent(this, RegistrationActivity.class);
@@ -35,11 +36,18 @@ public class LoginActivity extends AppCompatActivity {
 
         } );
 
-        txt = findViewById(R.id.email);
-        Button btn1 = findViewById(R.id.button_login);
-        btn1.setOnClickListener(v -> {
-            login();
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),
+                        MapsActivity.class);
+                startActivity(i);
+
+            }
         });
+
+        Button btn1 = findViewById(R.id.button_login);
+        btn1.setOnClickListener(v -> login());
         Bundle bnd = getIntent().getExtras();
         if (bnd != null)
         {
