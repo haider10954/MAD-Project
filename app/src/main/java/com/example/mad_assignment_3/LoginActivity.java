@@ -36,15 +36,15 @@ public class LoginActivity extends AppCompatActivity {
 
         } );
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),
-                        MapsActivity.class);
-                startActivity(i);
-
-            }
-        });
+//        btn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(),
+//                        MapsActivity.class);
+//                startActivity(i);
+//
+//            }
+//        });
 
         Button btn1 = findViewById(R.id.button_login);
         btn1.setOnClickListener(v -> login());
