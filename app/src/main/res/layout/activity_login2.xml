@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/android"
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -102,17 +103,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696" />
 
-    <Button
-        style="?attr/materialButtonOutlinedStyle"
-        android:id="@+id/map"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/map"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button_login"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button_login"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
 </androidx.constraintlayout.widget.ConstraintLayout>

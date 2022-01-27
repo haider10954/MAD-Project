@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/android"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
     <Button
@@ -24,11 +25,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="171dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/download" />
+        app:layout_constraintVertical_bias="0.04"
+        app:srcCompat="@drawable/r" />
 </androidx.constraintlayout.widget.ConstraintLayout>

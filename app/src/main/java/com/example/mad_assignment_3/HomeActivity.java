@@ -51,14 +51,13 @@ public class HomeActivity extends AppCompatActivity {
                         companyList.get(position).description);
                 intent.putExtra("address",
                         companyList.get(position).address);
-                intent.putExtra("geolocation",
-                        companyList.get(position).location.getLatitude());
-                intent.putExtra("geolocation",
+                intent.putExtra("longitude",
                         companyList.get(position).location.getLongitude());
-                intent.putExtra("Logo",
+                intent.putExtra("latitude",
+                        companyList.get(position).location.getLatitude());
+                intent.putExtra("logo",
                         companyList.get(position).logo);
                 startActivity(intent);
-
             }
             @Override
             public void onLongClick(View view, int position) {

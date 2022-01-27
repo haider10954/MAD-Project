@@ -8,9 +8,9 @@ public class Geolocation {
         this.latitude=latitude;
     }
     @SerializedName("latitude")
-    double latitude;
+    public double latitude;
     @SerializedName("longitude")
-    double longitude;
+    public double longitude;
 
     public double getLatitude() { return latitude; }
 

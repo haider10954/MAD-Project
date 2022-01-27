@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,16 +36,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(i);
 
         } );
-
-//        btn2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getApplicationContext(),
-//                        MapsActivity.class);
-//                startActivity(i);
-//
-//            }
-//        });
 
         Button btn1 = findViewById(R.id.button_login);
         btn1.setOnClickListener(v -> login());
@@ -81,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onFailure(Call<LoginResponse> call, Throwable t) {
                     Toast.makeText(
                             getApplicationContext(),
-                            "Could not register",
+                            "Could not Login",
                             Toast.LENGTH_LONG
                     ).show();
                 }

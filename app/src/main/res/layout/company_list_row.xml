@@ -29,8 +29,7 @@
         android:layout_below="@id/title"
         android:fontFamily="sans-serif-smallcaps"
         android:includeFontPadding="true"
-        android:textSize="15sp"
-        app:drawableLeftCompat="@drawable/bullets" />
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/yearText"
@@ -38,6 +37,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="9dp"
-        android:layout_below="@+id/locationText"
-        app:drawableLeftCompat="@drawable/bullets" />
+        android:layout_below="@+id/locationText" />
 </RelativeLayout>
