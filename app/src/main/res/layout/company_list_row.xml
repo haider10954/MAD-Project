@@ -20,7 +20,8 @@
         android:layout_margin="0dp"
         android:layout_alignParentTop="true"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/locationText"
@@ -29,7 +30,8 @@
         android:layout_below="@id/title"
         android:fontFamily="sans-serif-smallcaps"
         android:includeFontPadding="true"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/yearText"
@@ -37,5 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="9dp"
-        android:layout_below="@+id/locationText" />
+        android:layout_below="@+id/locationText"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        />
 </RelativeLayout>

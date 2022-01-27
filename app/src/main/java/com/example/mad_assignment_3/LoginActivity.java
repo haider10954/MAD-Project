@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         } );
 
+
         Button btn1 = findViewById(R.id.button_login);
         btn1.setOnClickListener(v -> login());
         Bundle bnd = getIntent().getExtras();

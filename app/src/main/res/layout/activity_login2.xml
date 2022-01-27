@@ -79,10 +79,12 @@
         app:layout_constraintVertical_bias="0.581" />
 
     <TextView
+
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dont"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
@@ -91,6 +93,7 @@
         app:layout_constraintVertical_bias="0.693" />
 
     <Button
+        style="?attr/materialButtonOutlinedStyle"
         android:id="@+id/BtnSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

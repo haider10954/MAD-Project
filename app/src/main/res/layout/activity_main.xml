@@ -33,5 +33,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04"
-        app:srcCompat="@drawable/r" />
+        app:srcCompat="@drawable/r"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
