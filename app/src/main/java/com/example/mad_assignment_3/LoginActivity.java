@@ -54,18 +54,26 @@ public class LoginActivity extends AppCompatActivity {
     private void login() {
         String password = edt1.getText().toString();
         String email = edt.getText().toString();
-
-        new Thread(() -> {
             Call<LoginResponse> call = new BackendImpl(getApplicationContext()).login(email, password);
             call.enqueue(new Callback<LoginResponse>() {
 
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                     LoginResponse data = response.body();
-                    if (data.status) {
-                        new BackendImpl(getApplicationContext()).saveToken(data.token);
-                        Intent intent= new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(intent);
+                    try {
+                        if (data.status) {
+                            new BackendImpl(getApplicationContext()).saveToken(data.token);
+                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                            startActivity(intent);
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(
+                                getApplicationContext(),
+                                "Enter a Valid Email",
+                                Toast.LENGTH_LONG
+                        ).show();
                     }
                 }
 
@@ -78,6 +86,5 @@ public class LoginActivity extends AppCompatActivity {
                     ).show();
                 }
             });
-        }).start();
     }
 }

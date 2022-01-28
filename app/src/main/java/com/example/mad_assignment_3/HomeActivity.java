@@ -66,8 +66,6 @@ public class HomeActivity extends AppCompatActivity {
         getCompaniesList();
     }
     private void getCompaniesList() {
-        
-        new Thread(() -> {
             Call<CompanyResponse> call = new BackendImpl(getApplicationContext()).companies();
             call.enqueue(new Callback<CompanyResponse>() {
                 @Override
@@ -88,6 +86,5 @@ public class HomeActivity extends AppCompatActivity {
                     ).show();
                 }
             });
-        }).start();
     }
 }

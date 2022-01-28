@@ -75,7 +75,7 @@ public class RegistrationActivity extends AppCompatActivity {
         }
         else if (!val.matches((emailPattern)))
         {
-            e_email.setError("Invalid Email");
+            e_email.setError("Your Email Is not Incorrect");
             return false;
         }
         else
